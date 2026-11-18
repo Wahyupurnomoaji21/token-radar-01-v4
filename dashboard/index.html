@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Token Radar — radar-5</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<header class="mast">
+  <div class="mast-in">
+    <div>
+      <h1>Token Radar</h1>
+      <p class="mast-sub">Pre-token protocols, ranked by what a launch would be worth — from the snapshot's own figures.</p>
+    </div>
+    <div class="mast-meta">
+      <span class="pill" id="meta-version">radar-5</span>
+      <span class="pill dim" id="meta-asof"></span>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section id="hero" aria-label="Top three"></section>
+  <section id="totals" aria-label="Totals"></section>
+  <section id="strip" aria-label="Model in one line"></section>
+
+  <nav class="tabs" aria-label="Views">
+    <button type="button" data-tab="board" class="tab active">Board</button>
+    <button type="button" data-tab="live" class="tab">Live tokens</button>
+    <button type="button" data-tab="method" class="tab">Method &amp; audit</button>
+  </nav>
+
+  <section id="view-board" class="view">
+    <div class="controls">
+      <label class="ctl">Search <input id="q" type="search" placeholder="name, slug or category" autocomplete="off"></label>
+      <label class="ctl">Category <select id="f-cat"></select></label>
+      <label class="ctl">Chain <select id="f-chain"></select></label>
+      <label class="ctl">Verdict <select id="f-verdict">
+        <option value="">All verdicts</option>
+        <option value="farm">Farm</option>
+        <option value="thin">Thin</option>
+        <option value="later">Later</option>
+      </select></label>
+      <label class="chk"><input id="f-watch" type="checkbox"> Watchlist only</label>
+      <label class="chk"><input id="f-grow" type="checkbox"> Growing only</label>
+    </div>
+    <p class="count" id="count"></p>
+    <div class="table-wrap">
+      <table id="board">
+        <thead><tr>
+          <th data-sort="rank">#</th>
+          <th data-sort="name">Protocol</th>
+          <th data-sort="value">Implied value</th>
+          <th data-sort="band">Band</th>
+          <th data-sort="tvl">TVL</th>
+          <th data-sort="growth">7d</th>
+          <th data-sort="age">Age</th>
+          <th data-sort="net">Net at band low</th>
+          <th data-sort="verdict">Verdict</th>
+        </tr></thead>
+        <tbody id="board-body"></tbody>
+      </table>
+    </div>
+    <div class="pager" id="pager"></div>
+    <section id="detail" aria-label="Protocol detail"></section>
+  </section>
+
+  <section id="view-live" class="view" hidden>
+    <p class="lede">Live-token protocols, priced by the market — not by this model. The top 30 by market cap; the 81 of them in priced categories are the comps the size curve is fitted on.</p>
+    <div class="table-wrap">
+      <table id="live-table">
+        <thead><tr><th>#</th><th>Protocol</th><th>Category</th><th>TVL</th><th>Market cap</th><th>Mcap / TVL</th><th>7d</th></tr></thead>
+        <tbody id="live-body"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="view-method" class="view" hidden>
+    <div id="method"></div>
+  </section>
+
+  <footer>
+    <p>Implied value is this entry's own estimate, never a price and never a prediction that a token launches, or when. A protocol "records no token" in DefiLlama's record; the board never claims it has none. Gas figures are rough heuristics, not quotes. The snapshot is frozen at the date above: a protocol that launched after that date still reads as pre-token here.</p>
+  </footer>
+</main>
+<script src="../data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
