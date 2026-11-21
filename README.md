@@ -1,5 +1,9 @@
 # Token Radar — radar-5
 
+[![make.fun](https://make.fun/badge/token-radar-01.svg)](https://make.fun/bounty/token-radar-01)
+[![Rank](https://make.fun/badge/token-radar-01/Wahyupurnomoaji21/token-radar-01-v4/rank.svg)](https://make.fun/bounty/token-radar-01)
+[![Reward](https://make.fun/badge/token-radar-01/Wahyupurnomoaji21/token-radar-01-v4/reward.svg)](https://make.fun/bounty/token-radar-01)
+
 Build the best token launch radar (make.fun `token-radar-01`).
 
 The program reads the sealed DefiLlama snapshot, ranks every protocol
